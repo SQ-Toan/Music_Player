@@ -1,0 +1,11 @@
+{
+    "songs": [
+        {
+            "id": 1,
+            "name": "Đừng làm trái tim anh đau",
+            "singer": "Sơn Tùng MTP",
+            "path": "https://www.youtube.com/watch?v=abPmZCZZrFA",
+            "image": "./assets/img/sontung.webp"
+        }
+    ]
+}

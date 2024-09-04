@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --primary-color: #48bfe9;
+    --text-color: #171534;
+    --outline-color: #b6e3f3;
+}
+html {
+    font-size: 62.5%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    font-family: "SUSE", sans-serif;
+    background: #f2e6e8;
+}
+
+a {
+    text-decoration: none;
+}
+
+input,
+button,
+select,
+textarea {
+    font-size: inherit;
+    font-family: inherit;
+}
+
+/* Player */
+.player {
+    display: flex;
+    justify-content: center;
+    min-width: 430px;
+    min-height: 932px;
+    background-color: #fff;
+    box-shadow: 0px 2px 20px 0 rgba(0, 0, 0, 0.3);
+}
+.player .icon-pause {
+    display: none;
+}
+
+.player.playing .icon-pause {
+    display: inline-block;
+}
+
+.player.playing .icon-play {
+    display: none;
+}
+
+/* Dashboard */
+.dashboard {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background: url("/assets/img/background_dashboard.jpg") no-repeat center;
+    background-size: cover;
+}
+/* Header */
+
+.dashboard header h4 {
+    font-size: 1.6rem;
+    line-height: 1.71;
+    font-weight: 500;
+    color: var(--primary-color);
+    text-shadow: 0.1px 0.1px var(--outline-color);
+}
+
+.dashboard header h1 {
+    font-weight: 600;
+    font-weight: 1.8rem;
+    line-height: 1.2;
+    color: var(--text-color);
+}
+/* CD */
+.cd {
+    display: flex;
+    margin: 10px auto 0;
+    width: 200px;
+}
+.cd-thumb {
+    width: 100%;
+    padding-top: 100%;
+    border-radius: 50%;
+    background: #a0a0a0;
+    opacity: 0.6;
+    background-size: cover;
+    margin: auto;
+}
+
+/* control */
+
+.control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0 10px 0;
+}
+
+.control .btn {
+    color: #666;
+    padding: 18px;
+    font-size: 18px;
+}
+
+.control .btn.active {
+    color: var(--primary-color);
+}
+
+.control .btn-toggle_play {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    font-size: 2.4rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-color);
+}
+
+/* Progress */
+
+.progress {
+    width: 100%;
+    -webkit-appearance: none;
+    height: 6px;
+    background: var(--outline-color);
+    outline: none;
+    opacity: 0.8;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+}
+
+.progress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 6px;
+    background-color: var(--primary-color);
+    cursor: pointer;
+}
