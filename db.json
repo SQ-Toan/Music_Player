@@ -5,7 +5,21 @@
             "name": "Đừng làm trái tim anh đau",
             "singer": "Sơn Tùng MTP",
             "path": "https://www.youtube.com/watch?v=abPmZCZZrFA",
-            "image": "./assets/img/sontung.webp"
+            "image": "./assets/imgs/sontung.webp"
+        },
+        {
+            "id": 2,
+            "name": "Đi tìm tình yêu",
+            "singer": "MONO",
+            "path": "https://www.youtube.com/watch?v=GOSiWQlZdVU",
+            "image": "./assets/imgs/mono.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Hit me up",
+            "singer": "Binz",
+            "path": "https://www.youtube.com/watch?v=3gNuUcPg1fk",
+            "image": "./assets/imgs/binz.jpg"
         }
     ]
 }
