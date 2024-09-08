@@ -36,12 +36,16 @@ getObjectSongs().then((songs) => {
     const cd = $(".cd");
     const playBtn = $(".btn-toggle_play");
     const progress = $(".progress");
-    // console.log(player);
+    const nextBtn = $(".btn-next");
+    const prevBtn = $(".btn-prev");
+    const randomBtn = $(".btn-shuffle");
+    // console.log(nextBtn);
 
     // Program
     const app = {
         currentIndex: 0,
         isPlaying: false,
+        isRandom: false,
         // Danh sách bài hát
         songs,
 
@@ -82,7 +86,21 @@ getObjectSongs().then((songs) => {
             const cdWidth = cd.offsetWidth;
             audio.volume = 0.5;
 
-            // Xử lý phóng to thu nhỏ cd
+            // Xử lý cd quay, dừng
+            const cdThumbAnimate = cdThumb.animate(
+                [
+                    {
+                        transform: "rotate(360deg)",
+                    },
+                ],
+                {
+                    duration: 10000, // 10second
+                    iterations: Infinity, // Lặp vô hạn
+                }
+            );
+            cdThumbAnimate.pause();
+
+            // Xử lý phóng to,thu nhỏ cd
             document.onscroll = function (e) {
                 const scrollTop =
                     window.scrollY || document.documentElement.scrollTop;
@@ -105,12 +123,14 @@ getObjectSongs().then((songs) => {
             audio.onplay = function () {
                 _this.isPlaying = true;
                 player.classList.add("playing");
+                cdThumbAnimate.play();
             };
 
             // khi song bị pause
             audio.onpause = function () {
                 _this.isPlaying = false;
                 player.classList.remove("playing");
+                cdThumbAnimate.pause();
             };
 
             // Khi tiến độ bài hát thay đổi
@@ -121,9 +141,9 @@ getObjectSongs().then((songs) => {
                     );
 
                     progress.value = progressPercent;
-                    console.log(
-                        Math.floor((audio.currentTime / audio.duration) * 100)
-                    );
+                    // console.log(
+                    //     Math.floor((audio.currentTime / audio.duration) * 100)
+                    // );
                 }
             };
 
@@ -132,6 +152,32 @@ getObjectSongs().then((songs) => {
                 const seekTime = (e.target.value * audio.duration) / 100;
                 audio.currentTime = seekTime;
             };
+
+            // Xử lý khi next bài hát
+            nextBtn.onclick = function () {
+                if (_this.isRandom) {
+                    _this.randomSong();
+                } else {
+                    _this.nextSong();
+                }
+                audio.play();
+            };
+
+            // Xử lý khi prev bài hát
+            prevBtn.onclick = function () {
+                if (_this.isRandom) {
+                    _this.randomSong();
+                } else {
+                    _this.prevSong();
+                }
+                audio.play();
+            };
+
+            // Xử lý khi random bài hát
+            randomBtn.onclick = function () {
+                _this.isRandom = !_this.isRandom;
+                randomBtn.classList.toggle("active", _this.isRandom);
+            };
         },
 
         // Tải thông tin bài hát hiện tại
@@ -139,6 +185,30 @@ getObjectSongs().then((songs) => {
             heading.textContent = this.currentSong.name;
             cdThumb.style.backgroundImage = `url(${this.currentSong.image})`;
             audio.src = this.currentSong.path;
+        },
+
+        // Nút next và prev bài hát tiếp theo hoặc bài hát trước
+        nextSong: function () {
+            this.currentIndex++;
+            if (this.currentIndex > this.songs.length - 1) {
+                this.currentIndex = 0;
+            }
+            this.loadCurrentSong();
+        },
+        prevSong: function () {
+            this.currentIndex--;
+            if (this.currentIndex < 0) {
+                this.currentIndex = this.songs.length - 1;
+            }
+            this.loadCurrentSong();
+        },
+        randomSong: function () {
+            let holdIndex;
+            do {
+                holdIndex = Math.floor(Math.random() * this.songs.length);
+            } while (this.currentIndex === holdIndex);
+            this.currentIndex = holdIndex;
+            this.loadCurrentSong();
         },
         // Hàm start thực thi chương trình khi mở trang web lên
         start: function () {
