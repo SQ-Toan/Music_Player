@@ -4,22 +4,64 @@
             "id": 1,
             "name": "Đừng làm trái tim anh đau",
             "singer": "Sơn Tùng MTP",
-            "path": "https://www.youtube.com/watch?v=abPmZCZZrFA",
+            "path": "./assets/audio/dung_lam_trai_tim_anh_dau.mp3",
             "image": "./assets/imgs/sontung.webp"
         },
         {
             "id": 2,
             "name": "Đi tìm tình yêu",
             "singer": "MONO",
-            "path": "https://www.youtube.com/watch?v=GOSiWQlZdVU",
+            "path": "./assets/audio/di_tim_tinh_yeu.mp3",
             "image": "./assets/imgs/mono.jpg"
         },
         {
             "id": 3,
             "name": "Hit me up",
             "singer": "Binz",
-            "path": "https://www.youtube.com/watch?v=3gNuUcPg1fk",
+            "path": "./assets/audio/hit_me_up.mp3",
             "image": "./assets/imgs/binz.jpg"
+        },
+        {
+            "id": 4,
+            "name": "This way",
+            "singer": "Cara",
+            "path": "./assets/audio/this_way.mp3",
+            "image": "./assets/imgs/cara.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Cô gái m52",
+            "singer": "HuyR ft. Tùng viu",
+            "path": "./assets/audio/co_gai_m52.mp3",
+            "image": "./assets/imgs/huyr.jpg"
+        },
+        {
+            "id": 6,
+            "name": "Tuý âm",
+            "singer": "Xesi",
+            "path": "./assets/audio/tuy_am.mp3",
+            "image": "./assets/imgs/xesi.jpg"
+        },
+        {
+            "id": 7,
+            "name": "Bạn đời",
+            "singer": "Karik ft. GDUCKY",
+            "path": "./assets/audio/ban_doi.mp3",
+            "image": "./assets/imgs/karik_gducky.jpg"
+        },
+        {
+            "id": 8,
+            "name": "Thằng điên",
+            "singer": "JUSTATEE x Phương Ly",
+            "path": "./assets/audio/thang_dien.mp3",
+            "image": "./assets/imgs/crazyman.jpg"
+        },
+        {
+            "id": 9,
+            "name": "Yêu một người có lẽ",
+            "singer": "Lou Hoàng X Miu Lê",
+            "path": "./assets/audio/yeu_mot_nguoi_co_le.mp3",
+            "image": "./assets/imgs/yeumotnguoicole.jpg"
         }
     ]
 }

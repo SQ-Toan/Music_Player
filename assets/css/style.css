@@ -39,10 +39,11 @@ textarea {
     display: flex;
     align-items: center;
     flex-direction: column;
-    min-width: 430px;
-    min-height: 932px;
+    max-width: 430px;
+    max-height: 932px;
     background-color: #fff;
     box-shadow: 0px 2px 20px 0 rgba(0, 0, 0, 0.3);
+    /* overflow: hidden; */
 }
 .player .icon-pause {
     display: none;
@@ -58,7 +59,8 @@ textarea {
 
 /* Dashboard */
 .dashboard {
-    width: 100%;
+    position: fixed;
+    width: 430px;
     padding: 10px;
     text-align: center;
     background: url("/assets/imgs/background_dashboard.jpg") no-repeat center;
@@ -76,14 +78,14 @@ textarea {
 
 .dashboard header h1 {
     font-weight: 600;
-    font-weight: 1.8rem;
+    font-size: 1.8rem;
     line-height: 1.2;
     color: var(--text-color);
 }
 /* CD */
 .cd {
     display: flex;
-    margin: 10px auto 0;
+    margin: 0 auto;
     width: 200px;
 }
 .cd-thumb {
@@ -150,9 +152,8 @@ textarea {
 
 /* Playlist */
 .playlist {
-    border-top: 8px solid #48bfe940;
-    padding: 12px;
-    width: 100%;
+    margin-top: 369px;
+    width: 430px;
     background: rgb(182, 227, 243, 0.6);
 }
 
